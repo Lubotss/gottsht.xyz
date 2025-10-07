@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gottishtontop</title>
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn.discordapp.com/attachments/1335275053499023401/1425026048201855036/E311C8B7-8AC2-47D8-81AC-FC95324C2080.jpg?ex=68e6166d&is=68e4c4ed&hm=e2a31126445df116613d2122daac3092961572566894d69033bb2b474ee8866a&');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+
+    #volumeControl {
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: rgb(150, 20, 20);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <audio id="bgMusic" autoplay loop>
+    <source src="c:\Users\jasph\OneDrive\Desktop\Gott\NO LIMIT - ICE ICE (Official Music Video).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  
+  <div id="volumeControl">
+    <label for="volume">Volume:</label>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    const volumeSlider = document.getElementById('volume');
+
+    
+    music.volume = 0.5;
+
+    
+    volumeSlider.addEventListener('input', function() {
+      music.volume = this.value;
+    });
+
+    
+    document.body.addEventListener('click', function () {
+      if (music.paused) {
+        music.play();
+      }
+    }, { once: true });
+  </script>
+
+</body>
+</html>
